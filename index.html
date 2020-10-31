@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game</title>
+    <link rel="stylesheet" href="css/start.css">
+</head>
+<body>
+    <h1 id="header">Welcome in a fun free game</h1>
+    <h2 id ="h2" style="color: aquamarine;"></h2>
+    <div class = "container">
+        <input id = "enter" type="text" placeholder="Enter Your name">
+        <button onclick="writeName()">Submit</button>
+    </div>
+    <div style="height: 30px;">
+
+    </div>
+    <div class="container">
+        <a href="./start.html">play the dynamic mode</a>
+        <a href="./heigh.html">Hiegh score</a>
+        <a href="./setting.html">Setting</a>
+    </div>
+    <!-- <script src="js/initial.js"></script> -->
+    <script>
+       function writeName(){
+           let name = document.getElementById('enter').value;
+        // let name = localStorage.getItem('name');
+        console.log(name);
+        console.log(name.length);
+        if(name.length == 0){
+            localStorage.setItem('name','User');
+            document.getElementById('h2').innerHTML = "please enter your name";
+        }
+        else{
+            localStorage.setItem('name',name);
+            document.getElementById('h2').innerHTML = "Succesfully register name";
+        }
+        document.getElementById('enter').value = "";
+       
+       }
+    </script>
+    // <!-- <script src="js/script.js"></script> -->
+</body>
+</html>
